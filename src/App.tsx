@@ -1,5 +1,7 @@
+import BoardPage from "./pages/BoardPage";
+
 function App() {
-  return <>hola</>;
+  return <BoardPage />;
 }
 
 export default App;
