@@ -17,7 +17,7 @@ export default function Column({ columnId }: { columnId: string }) {
     return null;
   }
   return (
-    <div style={{ minWidth: 260 }}>
+    <section aria-label={column.title} style={{ minWidth: 260 }}>
       <h2>{column.title}</h2>
 
       <Droppable droppableId={columnId}>
@@ -36,6 +36,6 @@ export default function Column({ columnId }: { columnId: string }) {
       </Droppable>
 
       <AddTask isAdding={isAdding} columnId={columnId} addToggle={addToggle} />
-    </div>
+    </section>
   );
 }

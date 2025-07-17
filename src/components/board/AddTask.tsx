@@ -30,7 +30,7 @@ export default function AddTask({
   };
 
   if (!isAdding) {
-    return <button onClick={() => addToggle(true)}>+ tarjeta</button>;
+    return <button onClick={() => addToggle(true)}>agregar</button>;
   }
 
   return (

@@ -14,8 +14,8 @@ export function useTaskActions({ taskId }: { taskId?: string }) {
   // create a new task
   const createTask = useCallback(
     ({ columnId }: { columnId: string }) => {
-      const trimmed = title.trim();
-      if (!trimmed) return;
+      const trimmed = title.trim().replace(/\s+/g, " ");
+      if (!trimmed) return;       
       addTask(columnId, trimmed);
       setTitle('');
     },
