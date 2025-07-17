@@ -1,6 +1,7 @@
 import { DragDropContext, type DropResult } from '@hello-pangea/dnd';
 import Column from '../components/board/Column';
 import { useBoardStore } from '../store/boardStore';
+import AddColumn from '../components/board/AddColumn';
 
 export default function BoardPage() {
   const { board, moveTask } = useBoardStore();
@@ -19,11 +20,13 @@ export default function BoardPage() {
 
   return (
     <DragDropContext onDragEnd={onDragEnd}>
-      <div style={{ display: 'flex', gap: 16, padding: 16 }}>
+      <div style={{ display: 'flex', gap: 16, padding: 16, alignItems: 'flex-end' }}>
         {board.columnOrder.map((colId) => (
           <Column key={colId} columnId={colId} />
         ))}
+        <AddColumn/>
       </div>
+      
     </DragDropContext>
   );
 }

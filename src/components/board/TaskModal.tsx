@@ -1,6 +1,7 @@
 // src/components/TaskModal.tsx
 import { useEffect, useRef } from 'react';
 import { useTaskActions } from '../../hooks/useTaskActions';
+import Button from '../basic/Button';
 
 interface Props {
   taskId: string;
@@ -51,10 +52,10 @@ export default function TaskModal({ taskId, onClose }: Props) {
           />
         </label>
 
-        <button type="submit">Guardar</button>
-        <button onClick={onClose} type="button">
+        <Button type="submit">Guardar</Button>
+        <Button onClick={onClose} type="button">
           Cancelar
-        </button>
+        </Button>
       </form>
     </dialog>
   );

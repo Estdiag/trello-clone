@@ -6,7 +6,7 @@ import { useBoardStore } from '../store/boardStore';
 describe('useTaskActions - createTask', () => {
   beforeEach(() => {
     jest.clearAllMocks();
-    board.tasks = {}; // limpia tareas simuladas
+    board.tasks = {};
   });
 
   it('no llama a addTask si el título está vacío', () => {

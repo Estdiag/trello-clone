@@ -3,6 +3,7 @@ import { Droppable } from '@hello-pangea/dnd';
 import TaskCardContainer from './TaskCardContainer';
 import { useBoardStore } from '../../store/boardStore';
 import AddTask from './AddTask';
+import ColumnTitle from './ColumnTitle';
 
 export default function Column({ columnId }: { columnId: string }) {
   const { board } = useBoardStore();
@@ -18,7 +19,7 @@ export default function Column({ columnId }: { columnId: string }) {
   }
   return (
     <section aria-label={column.title} style={{ minWidth: 260 }}>
-      <h2>{column.title}</h2>
+     <ColumnTitle columnId={columnId} />
 
       <Droppable droppableId={columnId}>
         {p => (

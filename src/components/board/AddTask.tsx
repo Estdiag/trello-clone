@@ -1,5 +1,6 @@
 import { useRef, useEffect} from 'react';
 import { useTaskActions } from '../../hooks/useTaskActions';
+import Button from '../basic/Button';
 
 export default function AddTask({
   isAdding,
@@ -30,7 +31,7 @@ export default function AddTask({
   };
 
   if (!isAdding) {
-    return <button onClick={() => addToggle(true)}>agregar</button>;
+    return <Button onClick={() => addToggle(true)}>agregar</Button>;
   }
 
   return (
@@ -49,10 +50,10 @@ export default function AddTask({
         />
 
         <div className="mt-2 flex gap-2">
-          <button type="submit" disabled={!taskTitle.trim()}>
+          <Button type="submit" disabled={!taskTitle.trim()}>
             Añadir
-          </button>
-          <button
+          </Button>
+          <Button
             type="button"
             onClick={() => {
               addToggle(false);
@@ -60,7 +61,7 @@ export default function AddTask({
             }}
           >
             Cancelar
-          </button>
+          </Button>
         </div>
       </form>
     </>
