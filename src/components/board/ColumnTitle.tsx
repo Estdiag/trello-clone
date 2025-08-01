@@ -20,6 +20,11 @@ export default function ColumnTitle({ columnId }: { columnId: string }) {
     setEditing(false)
   };
 
+  const handleCancelEdit=()=>{
+    handleCancel()
+    setEditing(false)
+  }
+
   if (editing) {
     return (
       <>
@@ -31,7 +36,7 @@ export default function ColumnTitle({ columnId }: { columnId: string }) {
             onChange={handleChange}
             onKeyDown={e => {
               if (e.key === 'Escape') {
-                handleCancel();
+                handleCancelEdit();
               }
             }}
             placeholder="Título de la columna…"
@@ -47,7 +52,7 @@ export default function ColumnTitle({ columnId }: { columnId: string }) {
             <button
               type="button"
               onClick={() => {
-                handleCancel();
+                handleCancelEdit();
               }}
             >
               Cancelar

@@ -1,22 +1,21 @@
 import { renderHook, act } from '@testing-library/react';
 import { useTaskActions } from '../hooks/useTaskActions';
-import { addTask, board } from './boardStoreMock';
 import { useBoardStore } from '../store/boardStore';
 
 describe('useTaskActions - createTask', () => {
   beforeEach(() => {
-    jest.clearAllMocks();
-    board.tasks = {};
+    jest.clearAllMocks();    
   });
 
   it('no llama a addTask si el título está vacío', () => {
     const { result } = renderHook(() => useTaskActions({}));
+     const spy = jest.spyOn(useBoardStore.getState(), 'addTask');
 
     act(() => {
       result.current.createTask({ columnId: 'todo' });
     });
 
-    expect(addTask).not.toHaveBeenCalled();
+    expect(spy).not.toHaveBeenCalled();
   });
 
   it('crea una tarea con título válido', () => {
