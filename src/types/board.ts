@@ -1,15 +1,5 @@
-export interface Task {
-  id: string;
-  title: string;
-  description?: string;    
-}
-
-export interface Column {
-  id: string;
-  title: string;
-  taskIds: string[];    
-}
-
+import type { Column } from "./column";
+import type { Task } from "./task";
 export interface Board {
   id: string;
   title: string;

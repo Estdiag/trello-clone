@@ -1,7 +1,9 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import { v4 as uuid } from 'uuid';
-import type { Board, Column, Task } from '../types/board';
+import type { Board } from '../types/board';
+import type { Column } from '../types/column';
+import type { Task } from '../types/task';
 import { removeAllSpaces } from '../utils/textFormater';
 
 const initialBoard: Board = {
